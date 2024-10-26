@@ -6,8 +6,8 @@ export default function Home() {
   return (
 		<div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 			<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-				<div className="App">
-					<Typography variant="h1" className="text-h1">Product Reviews and Questions</Typography>
+				<div className="App w-full">
+					<Typography variant="h1" className="text-h1 mb-6">Product Reviews and Questions</Typography>
 					<SearchableSection />
 				</div>
 			</main>

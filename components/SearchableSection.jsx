@@ -1,5 +1,5 @@
 'use client'
-import { Input } from "aspect-ui";
+import { Input, Typography } from "aspect-ui";
 import React, { useState, useEffect } from "react";
 
 const SearchableSection = () => {
@@ -72,7 +72,7 @@ const SearchableSection = () => {
 			const lowercaseWord = word.toLowerCase();
 			if (searchTerms.includes(lowercaseWord)) {
 				return (
-					<mark key={index} className="bg-warning-400">
+					<mark key={index} className="border border-b-warning-400">
 						{word}
 					</mark>
 				);
@@ -97,15 +97,20 @@ const SearchableSection = () => {
 
 	return (
 		<div>
+			<Typography variant="body" className="text-body1 text-lg">
+				Search Reviews and Questions
+			</Typography>
 			<Input
 				type="text"
-				placeholder="Search reviews and questions"
+				placeholder="What's the advantages of using Gutenkit instead of elementor or Divi?"
 				value={searchTerm}
 				onChange={handleSearch}
 			/>
 			<div>
 				{currentItems.map((item, index) => (
-					<div key={index} className="mb-4 p-4 border border-gray-200 rounded">
+					<div
+						key={index}
+						className="mb-4 p-4 border border-gray-200 bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 rounded">
 						<h3 className="text-lg font-semibold mb-2">
 							{highlightText(
 								item.Title || item.Question,
